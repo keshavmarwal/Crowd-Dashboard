@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Design tokens taken from the Figma screens (fine-tune with Figma's inspect panel) */
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #3f9a94;     
+  --color-brand-dark: #347f7a;    
+  --color-brand-deep: #245a5a;     
+  --color-sidebar-top: #262b2c;    
+  --color-page: #f7f8fa;           
+  --color-ink: #1d2327;
+  --color-muted: #6b7378;
+  --color-line: #e4e7ea;
+  --color-male: #8bb0ae;           
+  --color-female: #bde0e0;         
+  --color-live: #b42318;          
+  --color-up: #2e9e6b;
+  --color-down: #c0392b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  animation: slide-in-right 0.2s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-in-right {
+    animation: none;
+  }
+}
